@@ -82,6 +82,11 @@ figcaption{font-size:.9rem;color:var(--muted);text-align:center;margin-top:.6rem
 .finale{text-align:center;margin-top:3rem}
 .finale p{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(2rem,7vw,3.4rem);line-height:1.05;margin:1rem 0 .5rem;color:var(--plum)}
 .finale small{color:var(--muted);font-size:.95rem}
+.play-wrap{text-align:center;margin:-.6rem 0 1.4rem}
+.prehrat{display:inline-flex;align-items:center;gap:.45rem;font:inherit;font-size:.95rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.4rem 1rem .4rem .8rem;cursor:pointer;margin:.2rem}
+.prehrat:hover{border-color:var(--gold)}
+.prehrat svg{width:1.3rem;height:1.3rem}
+.prehrat.hraje{background:var(--gold);color:#1a2236;border-color:var(--gold)}
 footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5rem}
 </style>
 </head>
@@ -106,41 +111,91 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
       <polygon points="540,0 580,0 660,340 470,340" fill="url(#spot)"/>
       <rect x="0" y="330" width="800" height="50" fill="#3a2a22"/>
       <rect x="0" y="330" width="800" height="5" fill="#5c4434"/>
+      <!-- pult kontrabasisty: otevřené prázdné desky -->
       <g>
-        <circle cx="215" cy="175" r="18" fill="#f1cfa8"/>
-        <path d="M200 160c5-14 26-14 32 2-10-6-22-6-32-2z" fill="#3b2a20"/>
-        <rect x="198" y="195" width="34" height="80" rx="12" fill="#22304f"/>
-        <rect x="202" y="270" width="11" height="60" fill="#151d33"/><rect x="217" y="270" width="11" height="60" fill="#151d33"/>
-        <rect x="246" y="120" width="6" height="110" fill="#5a3a22"/>
-        <ellipse cx="249" cy="255" rx="28" ry="36" fill="#a8622c"/>
-        <ellipse cx="249" cy="300" rx="34" ry="30" fill="#a8622c"/>
-        <path d="M241 260q8 6 0 14M257 260q-8 6 0 14" stroke="#3a2010" stroke-width="2" fill="none"/>
-        <rect x="248" y="300" width="2" height="38" fill="#888"/>
-        <path d="M228 210l20 30" stroke="#f1cfa8" stroke-width="8" stroke-linecap="round"/>
+        <path d="M128 262V330M114 330h28" stroke="#9aa3b5" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M106 236h44l-5 28h-34z" fill="#3a4561"/>
+        <path d="M110 238h17v22h-14zM129 238h17l-3 22h-14z" fill="#f4ead2"/>
       </g>
+      <!-- kontrabasista: levá ruka na hmatníku, pravá drnká -->
       <g>
-        <path d="M330 250h170c20 0 30-30 10-50-30-30-120-40-180-20z" fill="#0d0f17"/>
-        <rect x="330" y="250" width="170" height="16" fill="#1b1e2b"/>
-        <rect x="335" y="266" width="8" height="64" fill="#0d0f17"/><rect x="488" y="266" width="8" height="64" fill="#0d0f17"/>
-        <rect x="340" y="248" width="90" height="6" fill="#f4ead2"/>
-        <circle cx="380" cy="200" r="17" fill="#e8bd94"/>
-        <path d="M362 200c0-26 36-26 36 0 0 14-4 24-4 24h-28s-4-10-4-24z" fill="#6b2d1a" opacity=".95"/>
-        <circle cx="380" cy="203" r="13" fill="#e8bd94"/>
-        <rect x="364" y="220" width="32" height="42" rx="10" fill="#8c1c3a"/>
-        <rect x="355" y="290" width="50" height="8" fill="#2a1d16"/>
-      </g>
-      <g>
-        <circle cx="585" cy="175" r="17" fill="#f3d2b0"/>
-        <path d="M568 172c0-24 34-24 34 0 6 30 2 44 2 44h-38s-4-14 2-44z" fill="#c9962e"/>
-        <circle cx="585" cy="178" r="13" fill="#f3d2b0"/>
-        <path d="M568 198h34l10 90h-54z" fill="#22304f"/>
-        <rect x="572" y="286" width="10" height="44" fill="#151d33"/><rect x="590" y="286" width="10" height="44" fill="#151d33"/>
-        <g transform="rotate(-28 560 200)">
-          <ellipse cx="540" cy="200" rx="24" ry="12" fill="#b5682a"/>
-          <rect x="500" y="197" width="22" height="5" fill="#3a2010"/>
+        <rect x="181" y="262" width="12" height="68" fill="#151d33"/><rect x="197" y="262" width="12" height="68" fill="#151d33"/>
+        <path d="M178 330h17v-5h-17zM195 330h17v-5h-17z" fill="#0b0f1c"/>
+        <path d="M176 184c0-8 6-12 19-12s19 4 19 12v82h-38z" fill="#22304f"/>
+        <path d="M189 172l6 16 6-16z" fill="#e9eef7"/>
+        <path d="M193 180l2 6 2-6z" fill="#8c1c3a"/>
+        <rect x="190" y="160" width="10" height="14" fill="#efc8a0"/>
+        <circle cx="195" cy="146" r="17" fill="#f1cfa8"/>
+        <path d="M178 144c0-14 9-20 18-20s17 6 17 18c-6-6-14-9-22-8-5 1-9 4-13 10z" fill="#3b2a20"/>
+        <g transform="rotate(-7 254 330)">
+          <path d="M254 330v-24" stroke="#888" stroke-width="2"/>
+          <path d="M254 214c-15 0-23 8-23 20 0 8 5 13 5 18s-8 9-8 24c0 18 12 30 26 30s26-12 26-30c0-15-8-19-8-24s5-10 5-18c0-12-8-20-23-20z" fill="#a8622c" stroke="#6e3a17" stroke-width="2"/>
+          <path d="M244 254q-4 8 0 16M264 254q4 8 0 16" stroke="#3a2010" stroke-width="2" fill="none"/>
+          <rect x="250" y="282" width="8" height="5" fill="#3a2010"/>
+          <rect x="251" y="104" width="6" height="132" fill="#1e140c"/>
+          <path d="M254 92c-6 0-8 6-5 10 2 3 5 3 5 6" stroke="#5a3a22" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M252.5 108V286M255.5 108V286" stroke="#e9e2cf" stroke-width=".8"/>
         </g>
-        <path d="M600 210l40-30" stroke="#3a2010" stroke-width="2"/>
-        <path d="M600 212l-14 10" stroke="#f3d2b0" stroke-width="7" stroke-linecap="round"/>
+        <path d="M209 186q22 4 31 -22" stroke="#22304f" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <circle cx="241" cy="161" r="6" fill="#f1cfa8"/>
+        <path d="M181 190q6 46 52 58" stroke="#22304f" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <circle cx="236" cy="249" r="6" fill="#f1cfa8"/>
+      </g>
+      <!-- křídlo z profilu se zvednutým víkem a pultem, klavíristka sedí u klávesnice -->
+      <g>
+        <path d="M352 226L486 128L496 132L524 226z" fill="#14171f"/>
+        <path d="M470 226L478 146" stroke="#3a3f4d" stroke-width="3"/>
+        <path d="M344 226H478c30 0 46 6 46 16v10H344z" fill="#0d0f17"/>
+        <rect x="344" y="252" width="180" height="10" fill="#1b1e2b"/>
+        <rect x="352" y="262" width="9" height="68" fill="#0d0f17"/><rect x="506" y="262" width="9" height="68" fill="#0d0f17"/>
+        <path d="M350 330h14M503 330h14" stroke="#c9a227" stroke-width="3"/>
+        <rect x="330" y="236" width="24" height="7" fill="#f4ead2"/>
+        <path d="M333 236v4M337 236v4M343 236v4M347 236v4M351 236v4" stroke="#0d0f17" stroke-width="1.6"/>
+        <path d="M356 226l6 -30h40l-4 30z" fill="#0d0f17"/>
+        <path d="M364 200h16l-3 24h-16zM382 200h16l-3 24h-16z" fill="#f4ead2"/>
+        <rect x="282" y="268" width="40" height="7" rx="2" fill="#2a1d16"/>
+        <rect x="286" y="275" width="5" height="55" fill="#2a1d16"/><rect x="313" y="275" width="5" height="55" fill="#2a1d16"/>
+        <path d="M302 268h28v62" stroke="#22304f" stroke-width="13" fill="none" stroke-linejoin="round"/>
+        <path d="M328 330h12v-5h-12z" fill="#0b0f1c"/>
+        <path d="M294 270c-2-20 0-40 8-52h16c6 12 6 32 4 52z" fill="#8c1c3a"/>
+        <path d="M314 226q14 6 20 12" stroke="#8c1c3a" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <circle cx="336" cy="239" r="4.5" fill="#e8bd94"/>
+        <rect x="306" y="196" width="8" height="12" fill="#e8bd94"/>
+        <circle cx="312" cy="186" r="15" fill="#e8bd94"/>
+        <path d="M297 186c-2-16 8-23 17-21 8 1 13 7 12 13-7-2-13-2-18 3 1 10-2 22-8 30-4-7-3-17-3-25z" fill="#6b2d1a"/>
+      </g>
+      <!-- pult houslistky -->
+      <g>
+        <path d="M546 262V330M534 330h24" stroke="#9aa3b5" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M530 240h32l-4 24h-24z" fill="#3a4561"/>
+        <path d="M533 242h12v18h-10zM547 242h12l-3 18h-9z" fill="#f4ead2"/>
+      </g>
+      <!-- houslistka: housle na levém rameni, levá ruka na krku, smyčec v pravé -->
+      <g>
+        <rect x="582" y="286" width="10" height="44" fill="#151d33"/><rect x="598" y="286" width="10" height="44" fill="#151d33"/>
+        <path d="M579 330h14v-4h-14zM597 330h14v-4h-14z" fill="#0b0f1c"/>
+        <path d="M581 188h28l14 102h-56z" fill="#22304f"/>
+        <rect x="590" y="174" width="10" height="16" fill="#f3d2b0"/>
+        <path d="M576 164c0-24 38-24 38 0 4 22 2 34 2 34h-42s-3-12 2-34z" fill="#c9962e"/>
+        <circle cx="595" cy="166" r="15" fill="#f3d2b0"/>
+        <path d="M580 162c2-12 10-16 16-16 8 0 14 5 15 13-10-1-20-1-31 3z" fill="#c9962e"/>
+        <g transform="rotate(-14 612 190)">
+          <path d="M603 190c0-8 6-10 12-8 3 1 5 1 8 0 6-2 12 0 12 8s-6 10-12 8c-3-1-5-1-8 0-6 2-12 0-12-8z" fill="#b5682a" stroke="#6e3a17" stroke-width="1.5"/>
+          <rect x="635" y="188" width="26" height="4" fill="#1e140c"/>
+          <circle cx="664" cy="190" r="3.5" fill="#3a2010"/>
+          <path d="M606 189H660M606 191H660" stroke="#e9e2cf" stroke-width=".7"/>
+        </g>
+        <path d="M606 196q30 26 48 -6" stroke="#22304f" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <circle cx="655" cy="186" r="4.5" fill="#f3d2b0"/>
+        <path d="M583 196q-22 18 -10 34" stroke="#22304f" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <circle cx="575" cy="231" r="4.5" fill="#f3d2b0"/>
+        <path d="M572 234L668 150" stroke="#3a2010" stroke-width="2"/>
+        <path d="M575 231L666 152" stroke="#e9e2cf" stroke-width="1"/>
+      </g>
+      <!-- prázdná zavařovací sklenice -->
+      <g transform="translate(634 299)">
+        <rect x="2" y="0" width="22" height="6" rx="2" fill="#8c1c3a"/>
+        <path d="M0 6h26v20c0 3-2 5-5 5H5c-3 0-5-2-5-5z" fill="#cfe3f0" fill-opacity=".35" stroke="#e9e2cf" stroke-width="1.5"/>
       </g>
     </svg>
   </div>
@@ -175,7 +230,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
       <b>Rekvizity</b>
       <ul>
         <li>prázdná zavařovací sklenice s&nbsp;víčkem (houslistka)</li>
-        <li>tři pulty a&nbsp;tři prázdné desky na noty</li>
+        <li>dva pulty (klavír má vlastní) a&nbsp;tři prázdné desky na noty</li>
         <li>volitelně stará prasklá struna (viz scéna s&nbsp;houslemi)</li>
       </ul>
     </div>
@@ -192,18 +247,24 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
     <p class="dir">Vypravěč ustoupí stranou. Na pódium přicházejí tři hudebníci s&nbsp;nástroji. Houslistka nese navíc prázdnou zavařovací sklenici s&nbsp;víčkem a&nbsp;bez vysvětlení ji postaví na zem vedle pultu. Rozestaví se, houslistka otevře desky na pultu. Jsou prázdné. Zarazí se.</p>
 
     <figure>
-      <svg viewBox="0 0 420 170" role="img" aria-label="Tři prázdné notové pulty">
+      <svg viewBox="0 0 420 170" role="img" aria-label="Dva prázdné notové pulty a prázdný pult na klavíru">
         <g fill="none" stroke="var(--muted)" stroke-width="4" stroke-linecap="round">
-          <path d="M70 70v90M40 160h60M210 70v90M180 160h60M350 70v90M320 160h60"/>
+          <path d="M60 70v90M30 160h60M360 70v90M330 160h60"/>
         </g>
         <g fill="var(--line)" stroke="var(--muted)" stroke-width="3">
-          <path d="M28 20h84l-8 50H36z"/><path d="M168 20h84l-8 50h-68z"/><path d="M308 20h84l-8 50h-68z"/>
+          <path d="M18 20h84l-8 50H26z"/><path d="M318 20h84l-8 50h-68z"/>
         </g>
+        <path d="M130 108h160c18 0 26 8 26 16v14H130z" fill="var(--stage)"/>
+        <rect x="124" y="104" width="34" height="9" fill="#f4ead2"/>
+        <path d="M128 104v5M134 104v5M142 104v5M148 104v5M154 104v5" stroke="#0d0f17" stroke-width="2"/>
+        <path d="M134 138v22M298 138v22" stroke="var(--stage)" stroke-width="7"/>
+        <path d="M166 104l8-58h84l-6 58z" fill="var(--stage)"/>
+        <path d="M176 52h36l-4 46h-36zM214 52h36l-4 46h-36z" fill="var(--line)"/>
         <g font-family="Fraunces, Georgia, serif" font-size="28" font-weight="900" fill="var(--plum)" text-anchor="middle">
-          <text x="70" y="55">?</text><text x="210" y="55">?</text><text x="350" y="55">?</text>
+          <text x="60" y="55">?</text><text x="211" y="85">?</text><text x="360" y="55">?</text>
         </g>
       </svg>
-      <figcaption>Tři pulty, nula not.</figcaption>
+      <figcaption>Dva pulty a pult na klavíru, nula not.</figcaption>
     </figure>
 
     <div class="line"><b>Houslistka</b><span>Ježiš, já si zapomněla doma noty!</span></div>
@@ -219,6 +280,7 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
       <span style="--i:0;margin-bottom:0">C</span><span style="--i:1;margin-bottom:1rem">E</span><span style="--i:2;margin-bottom:2rem">G</span><span style="--i:3;margin-bottom:2.6rem">A</span><span style="--i:4;margin-bottom:3.2rem">B</span><span style="--i:5;margin-bottom:2.6rem">A</span><span style="--i:6;margin-bottom:2rem">G</span><span style="--i:7;margin-bottom:1rem">E</span>
     </div>
     <p class="notes-label">Kontrabas: C E G A B A G E, dvakrát</p>
+    <p class="play-wrap"><button type="button" class="prehrat" data-hlas="bas" aria-label="Přehrát kontrabas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Přehrát</span></button></p>
 
     <p class="dir">Klavíristka se přidá rozloženými akordy. Další čtyři takty hrají spolu, motiv opět dvakrát. Začíná to znít jako opravdový jazz.</p>
 
@@ -226,22 +288,36 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
       <span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span>
     </div>
     <p class="notes-label">Klavír: C E G, C E G, C E G, C E G, dvakrát</p>
+    <p class="play-wrap"><button type="button" class="prehrat" data-hlas="klavir" aria-label="Přehrát klavír"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Přehrát</span></button> <button type="button" class="prehrat" data-hlas="spolu" aria-label="Přehrát kontrabas s klavírem"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span>Přehrát s&nbsp;basem</span></button></p>
 
     <p class="dir">Teprve teď se chce přidat houslistka. Nadechne se, zvedne smyčec k&nbsp;velkolepému sólu a&nbsp;hned na prvním tónu: pink! Zní to přesně jako prasklá struna. Hudba se zastaví. Houslistka ucukne a&nbsp;nevěřícně zírá na nástroj.</p>
 
     <figure>
-      <svg viewBox="0 0 420 200" role="img" aria-label="Housle s prasklou stočenou strunou">
-        <g transform="translate(210 100) rotate(-20)">
-          <path d="M-120 0c0-34 26-40 50-32 12 4 20 4 32 0 24-8 50-2 50 32S-14 40-38 32c-12-4-20-4-32 0-24 8-50 2-50-32z" fill="#b5682a" transform="translate(30 0)"/>
-          <path d="M-58 -10q6 10 0 20M-28 -10q-6 10 0 20" stroke="#3a2010" stroke-width="2.5" fill="none" transform="translate(30 0)"/>
-          <rect x="62" y="-5" width="80" height="10" rx="3" fill="#3a2010"/>
-          <circle cx="152" cy="0" r="10" fill="#3a2010"/>
-          <path d="M-80 -3H150M-80 3H150" stroke="#e9e2cf" stroke-width="1.5"/>
-          <path d="M-80 0H20q20 0 30-20t30-10 10 30-20 20" stroke="var(--gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <svg viewBox="0 0 440 210" role="img" aria-label="Housle se čtyřmi strunami, horní struna praskla a stočila se">
+        <g transform="translate(20 40) rotate(5 200 100)">
+          <!-- tělo: dolní oblouk vlevo, výkroje v pase, horní oblouk vpravo -->
+          <path d="M40 100C40 60 75 48 102 50C124 52 134 60 140 66C146 72 156 72 162 66C168 60 178 54 196 54C218 54 232 70 232 100C232 130 218 146 196 146C178 146 168 140 162 134C156 128 146 128 140 134C134 140 124 148 102 150C75 152 40 140 40 100Z" fill="#b5682a" stroke="#6e3a17" stroke-width="2.5"/>
+          <path d="M48 100C48 66 78 56 102 58C122 60 130 66 138 72M48 100C48 134 78 144 102 142C122 140 130 134 138 128M226 100C226 74 214 62 196 62C182 62 172 66 166 72M226 100C226 126 214 138 196 138C182 138 172 134 166 128" stroke="#8a4a1e" stroke-width="1.2" fill="none"/>
+          <!-- f-otvory -->
+          <path d="M120 78c4-6 10-6 12-2s6 6 12 2c4-2 8 0 8 4" stroke="#2a1608" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M120 122c4 6 10 6 12 2s6-6 12-2c4 2 8 0 8-4" stroke="#2a1608" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <!-- podbradek, struník, kobylka -->
+          <path d="M44 112c4-10 18-12 26-6 6 5 4 16-4 20-10 4-24-2-22-14z" fill="#2a1608"/>
+          <path d="M54 95L100 97V103L54 105Z" fill="#1e140c"/>
+          <rect x="133" y="89" width="5" height="22" rx="1.5" fill="#e2c79a"/>
+          <!-- hmatník, krk, kolíková skříň, šnek -->
+          <path d="M148 94L322 97V103L148 106Z" fill="#1e140c"/>
+          <rect x="322" y="96" width="38" height="8" rx="3" fill="#7a4320"/>
+          <path d="M332 96v-12M342 104v12M350 96v-12M358 104v12" stroke="#2a1608" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="368" cy="100" r="10" fill="#7a4320" stroke="#5a2e12" stroke-width="1.5"/>
+          <path d="M368 100m-6 0a6 6 0 1 0 6 -6a3 3 0 1 0 3 3" stroke="#2a1608" stroke-width="1.6" fill="none"/>
+          <!-- struny: tři celé, horní praskla za kobylkou a stočila se -->
+          <path d="M100 98.8L322 98.9M100 101.2L322 101.1M100 103.6L322 102.6" stroke="#f2ead6" stroke-width="1.1"/>
+          <path d="M100 96.4L135 96.6" stroke="#f2ead6" stroke-width="1.1"/>
+          <path d="M138 96.6c22 -2 30 -24 16 -28s-16 16 2 16 26 -22 6 -36" stroke="var(--gold)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M322 97.4c-16 0 -24 -14 -14 -19s12 8 2 11" stroke="var(--gold)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
         </g>
-        <g fill="var(--plum)" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="34">
-          <text x="290" y="48">pink!</text>
-        </g>
+        <text x="300" y="42" fill="var(--plum)" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="34">pink!</text>
       </svg>
       <figcaption>Dvě možnosti: ostře brnknout levou rukou (pizzicato), nebo držet u&nbsp;krku houslí starou prasklou strunu, zahrát jediný tón a&nbsp;strunu v&nbsp;tu chvíli pustit.</figcaption>
     </figure>
@@ -277,5 +353,63 @@ footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5re
 </main>
 
 <footer>Scénka podle snu, který se zdál <a href="https://www.ondrejkratochvil.eu/">Ondřeji Kratochvílovi</a> 2.&nbsp;11.&nbsp;2026.<br>Volně k&nbsp;použití na školních akcích.</footer>
+<script>
+// Přehrání motivů přes Web Audio (bez zvukových souborů). Tempo 132, motiv dvakrát.
+(function(){
+  var ctx = null, hraje = null, uzly = [];
+  var DOBA = 60 / 132;
+  var BAS = [65.41, 82.41, 98.00, 110.00, 116.54, 110.00, 98.00, 82.41]; // C E G A B A G E
+  var AKORD = [261.63, 329.63, 392.00];                                    // C E G
+
+  function ton(f, t, delka, typ, hlasitost){
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = typ; o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(hlasitost, t + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + delka);
+    o.connect(g).connect(ctx.destination);
+    o.start(t); o.stop(t + delka + 0.05);
+    uzly.push(o);
+    return t + delka;
+  }
+
+  function bas(t0){
+    var konec = t0;
+    for (var r = 0; r < 2; r++) for (var i = 0; i < 8; i++)
+      konec = ton(BAS[i], t0 + (r * 8 + i) * DOBA, DOBA * 0.9, 'triangle', 0.5);
+    return konec;
+  }
+
+  function klavir(t0){
+    var konec = t0;
+    for (var r = 0; r < 2; r++) for (var s = 0; s < 4; s++) for (var k = 0; k < 3; k++)
+      konec = ton(AKORD[k], t0 + ((r * 4 + s) * 2 + k * 2 / 3) * DOBA, DOBA * 1.1, 'sine', 0.22);
+    return konec;
+  }
+
+  function zastav(){
+    uzly.forEach(function(o){ try { o.stop(); } catch (e) {} });
+    uzly = [];
+    if (hraje) { hraje.classList.remove('hraje'); hraje.querySelector('span').textContent = hraje.dataset.popis; }
+    hraje = null;
+  }
+
+  document.querySelectorAll('.prehrat').forEach(function(tl){
+    tl.dataset.popis = tl.querySelector('span').textContent;
+    tl.addEventListener('click', function(){
+      var byl = hraje;
+      zastav();
+      if (byl === tl) return;
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      if (ctx.state === 'suspended') ctx.resume();
+      var t0 = ctx.currentTime + 0.05;
+      var konec = tl.dataset.hlas === 'bas' ? bas(t0) : klavir(t0);
+      if (tl.dataset.hlas === 'spolu') bas(t0);
+      hraje = tl; tl.classList.add('hraje'); tl.querySelector('span').textContent = 'Zastavit';
+      setTimeout(function(){ if (hraje === tl) zastav(); }, (konec - ctx.currentTime) * 1000 + 100);
+    });
+  });
+})();
+</script>
 </body>
 </html>
