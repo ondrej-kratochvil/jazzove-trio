@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jazzové trio bez not – scénka</title>
+<meta name="description" content="Krátká scénka pro tři klasicky vzdělané muzikanty, kteří mají zahrát jazz a přitom se mu elegantně vyhnout. Zdálo se mi to.">
+<meta name="author" content="Ondřej Kratochvíl">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Jazzové trio bez not">
+<meta property="og:description" content="Krátká scénka pro tři klasické muzikanty, kteří mají zahrát jazz a zapomněli noty. Zdálo se mi to.">
+<meta property="og:url" content="https://ondrej-kratochvil.github.io/jazzove-trio/">
+<meta property="og:image" content="https://ondrej-kratochvil.github.io/jazzove-trio/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f6; --ink:#1a2236; --muted:#55607a; --stage:#1b2a4a; --stage-ink:#f4ead2;
+  --gold:#d9a021; --plum:#8c1c3a; --card:#ffffff; --line:#cfd6e4;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121a2c; --ink:#e8ecf4; --muted:#9aa6bf; --stage:#0a1428; --stage-ink:#f4ead2;
+    --gold:#f2c14e; --plum:#e0708f; --card:#1a2440; --line:#2c3857;
+    color-scheme:dark;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Literata,Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.7}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--plum)}
+
+.hero{background:var(--stage);color:var(--stage-ink);padding:2.5rem 1.25rem 0;overflow:hidden}
+.hero-inner{max-width:60rem;margin:0 auto;text-align:center}
+.hero h1{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(2.4rem,8vw,5rem);line-height:1;margin:0 0 .6rem;letter-spacing:-.02em}
+.hero p{margin:0 auto 1.5rem;max-width:34rem;color:#c9cfe0;font-size:1.05rem}
+.hero svg{margin:0 auto}
+
+main{max-width:42rem;margin:0 auto;padding:3rem 1.25rem 4rem}
+h2{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:2rem;line-height:1.15;margin:3.5rem 0 1rem}
+h2:first-child{margin-top:0}
+.intro p{margin:0 0 1.1rem}
+.intro p:first-of-type::first-letter{font-family:Fraunces,Georgia,serif;font-weight:900;float:left;font-size:3.6rem;line-height:.85;padding:.25rem .5rem 0 0;color:var(--plum)}
+
+.cast{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.5rem 0 0}
+.cast div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem .6rem;text-align:center}
+.cast svg{width:72px;margin:0 auto .4rem}
+.cast b{display:block;font-family:Fraunces,Georgia,serif}
+.cast span{font-size:.85rem;color:var(--muted)}
+
+.rekvizity{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.25rem;margin-top:1.5rem}
+.rekvizity b{font-family:Fraunces,Georgia,serif}
+.rekvizity ul{margin:.4rem 0 0;padding-left:1.2rem}
+
+.scene{margin-top:2rem}
+.dir{font-style:italic;color:var(--muted);margin:1.4rem 0;padding-left:1rem;border-left:3px solid var(--gold)}
+.line{display:grid;grid-template-columns:7.5rem 1fr;gap:.75rem;margin:.55rem 0}
+.line b{font-family:Fraunces,Georgia,serif;color:var(--plum);font-weight:700}
+.line i{color:var(--muted)}
+@media (max-width:520px){.line{grid-template-columns:1fr;gap:0}.line b{font-size:.95rem}.cast{grid-template-columns:1fr}}
+
+figure{margin:2rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
+figcaption{font-size:.9rem;color:var(--muted);text-align:center;margin-top:.6rem}
+
+.notes{display:flex;gap:.35rem;justify-content:center;align-items:flex-end;height:7rem;overflow-x:auto;padding-bottom:.25rem}
+.notes span{flex:0 0 auto;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--stage);color:var(--stage-ink);display:grid;place-items:center;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:.95rem}
+.notes.arp span{background:var(--gold);color:#1a2236}
+.notes-label{text-align:center;font-size:.9rem;color:var(--muted);margin:.4rem 0 1.2rem}
+@media (prefers-reduced-motion:no-preference){
+  .notes.walk span{animation:walk 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*.15s)}
+}
+@keyframes walk{0%,100%{translate:0 0}12%{translate:0 -6px}24%{translate:0 0}}
+
+.finale{text-align:center;margin-top:3rem}
+.finale p{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(2rem,7vw,3.4rem);line-height:1.05;margin:1rem 0 .5rem;color:var(--plum)}
+.finale small{color:var(--muted);font-size:.95rem}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 1rem 2.5rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Jazzové trio bez&nbsp;not</h1>
+    <p>Krátká scénka pro tři klasicky vzdělané muzikanty, kteří mají zahrát jazz a&nbsp;přitom se mu elegantně vyhnout.</p>
+    <svg viewBox="0 0 800 380" role="img" aria-label="Jeviště se třemi hudebníky pod reflektory: kontrabasista, klavíristka a houslistka">
+      <defs>
+        <linearGradient id="spot" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f2c14e" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#f2c14e" stop-opacity=".05"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 0h110c-10 90 10 200-20 380H0z" fill="#8c1c3a"/>
+      <path d="M800 0H690c10 90-10 200 20 380h90z" fill="#8c1c3a"/>
+      <path d="M0 0h800v34c-60 22-120-10-200 8s-140-16-200 0-140-14-200 4S60 30 0 40z" fill="#a3254a"/>
+      <polygon points="220,0 260,0 330,340 140,340" fill="url(#spot)"/>
+      <polygon points="380,0 420,0 500,340 300,340" fill="url(#spot)"/>
+      <polygon points="540,0 580,0 660,340 470,340" fill="url(#spot)"/>
+      <rect x="0" y="330" width="800" height="50" fill="#3a2a22"/>
+      <rect x="0" y="330" width="800" height="5" fill="#5c4434"/>
+      <g>
+        <circle cx="215" cy="175" r="18" fill="#f1cfa8"/>
+        <path d="M200 160c5-14 26-14 32 2-10-6-22-6-32-2z" fill="#3b2a20"/>
+        <rect x="198" y="195" width="34" height="80" rx="12" fill="#22304f"/>
+        <rect x="202" y="270" width="11" height="60" fill="#151d33"/><rect x="217" y="270" width="11" height="60" fill="#151d33"/>
+        <rect x="246" y="120" width="6" height="110" fill="#5a3a22"/>
+        <ellipse cx="249" cy="255" rx="28" ry="36" fill="#a8622c"/>
+        <ellipse cx="249" cy="300" rx="34" ry="30" fill="#a8622c"/>
+        <path d="M241 260q8 6 0 14M257 260q-8 6 0 14" stroke="#3a2010" stroke-width="2" fill="none"/>
+        <rect x="248" y="300" width="2" height="38" fill="#888"/>
+        <path d="M228 210l20 30" stroke="#f1cfa8" stroke-width="8" stroke-linecap="round"/>
+      </g>
+      <g>
+        <path d="M330 250h170c20 0 30-30 10-50-30-30-120-40-180-20z" fill="#0d0f17"/>
+        <rect x="330" y="250" width="170" height="16" fill="#1b1e2b"/>
+        <rect x="335" y="266" width="8" height="64" fill="#0d0f17"/><rect x="488" y="266" width="8" height="64" fill="#0d0f17"/>
+        <rect x="340" y="248" width="90" height="6" fill="#f4ead2"/>
+        <circle cx="380" cy="200" r="17" fill="#e8bd94"/>
+        <path d="M362 200c0-26 36-26 36 0 0 14-4 24-4 24h-28s-4-10-4-24z" fill="#6b2d1a" opacity=".95"/>
+        <circle cx="380" cy="203" r="13" fill="#e8bd94"/>
+        <rect x="364" y="220" width="32" height="42" rx="10" fill="#8c1c3a"/>
+        <rect x="355" y="290" width="50" height="8" fill="#2a1d16"/>
+      </g>
+      <g>
+        <circle cx="585" cy="175" r="17" fill="#f3d2b0"/>
+        <path d="M568 172c0-24 34-24 34 0 6 30 2 44 2 44h-38s-4-14 2-44z" fill="#c9962e"/>
+        <circle cx="585" cy="178" r="13" fill="#f3d2b0"/>
+        <path d="M568 198h34l10 90h-54z" fill="#22304f"/>
+        <rect x="572" y="286" width="10" height="44" fill="#151d33"/><rect x="590" y="286" width="10" height="44" fill="#151d33"/>
+        <g transform="rotate(-28 560 200)">
+          <ellipse cx="540" cy="200" rx="24" ry="12" fill="#b5682a"/>
+          <rect x="500" y="197" width="22" height="5" fill="#3a2010"/>
+        </g>
+        <path d="M600 210l40-30" stroke="#3a2010" stroke-width="2"/>
+        <path d="M600 212l-14 10" stroke="#f3d2b0" stroke-width="7" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>Úvod</h2>
+    <p>Tohle se mi zdálo. Sen byl tak živý a&nbsp;vtipný, že jsem si ho po probuzení chtěl hned zapsat, než ho zapomenu.</p>
+    <p>Do základní umělecké školy dorazila zpráva, ze které učitelům zatrnulo: přijede televize a&nbsp;škola má postavit jazzové trio, které před kamerami něco zahraje. Housle, kontrabas, klavír. Sestava je na světě během pár minut, horší je to s&nbsp;repertoárem.</p>
+    <p>Jak už to u&nbsp;vystudovaných umělců bývá, klasiku mají v&nbsp;malíčku, ale jazzu se bojí jako čert kříže. Tam se totiž improvizuje, a&nbsp;improvizace bez not je pro člověka zvyklého na přesný zápis něco jako skok do studené vody bez plavek.</p>
+    <p>Naštěstí existuje řešení: scénka, která požadované minuty poctivě vyplní, publikum pobaví a&nbsp;skutečný jazz v&nbsp;ní zazní jen na pár taktů.</p>
+
+    <div class="cast">
+      <div>
+        <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="var(--stage)"/><rect x="38" y="12" width="4" height="34" fill="#c98a4b"/><ellipse cx="40" cy="50" rx="13" ry="12" fill="#a8622c"/><ellipse cx="40" cy="62" rx="16" ry="11" fill="#a8622c"/></svg>
+        <b>Kontrabasista</b><span>drží rytmus i&nbsp;humor</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="var(--stage)"/><rect x="14" y="34" width="52" height="16" rx="2" fill="#f4ead2"/><g fill="#0d0f17"><rect x="20" y="34" width="4" height="9"/><rect x="28" y="34" width="4" height="9"/><rect x="40" y="34" width="4" height="9"/><rect x="48" y="34" width="4" height="9"/><rect x="56" y="34" width="4" height="9"/></g></svg>
+        <b>Klavíristka</b><span>strun má na rozdávání</span>
+      </div>
+      <div>
+        <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="var(--stage)"/><g transform="rotate(-35 40 40)"><ellipse cx="40" cy="46" rx="11" ry="15" fill="#b5682a"/><rect x="38" y="16" width="4" height="22" fill="#3a2010"/></g><path d="M18 22l44 36" stroke="#f2c14e" stroke-width="2"/></svg>
+        <b>Houslistka</b><span>nosí s&nbsp;sebou prázdnou sklenici</span>
+      </div>
+    </div>
+
+    <div class="rekvizity">
+      <b>Rekvizity</b>
+      <ul>
+        <li>prázdná zavařovací sklenice s&nbsp;víčkem (houslistka)</li>
+        <li>tři pulty a&nbsp;tři prázdné desky na noty</li>
+        <li>volitelně stará prasklá struna (viz scéna s&nbsp;houslemi)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="scene">
+    <h2>Scénář</h2>
+
+    <p class="dir">Na pódium přicházejí tři hudebníci s&nbsp;nástroji. Houslistka nese navíc prázdnou zavařovací sklenici s&nbsp;víčkem a&nbsp;bez vysvětlení ji postaví na zem vedle pultu. Rozestaví se, houslistka otevře desky na pultu. Jsou prázdné. Zarazí se.</p>
+
+    <figure>
+      <svg viewBox="0 0 420 170" role="img" aria-label="Tři prázdné notové pulty">
+        <g fill="none" stroke="var(--muted)" stroke-width="4" stroke-linecap="round">
+          <path d="M70 70v90M40 160h60M210 70v90M180 160h60M350 70v90M320 160h60"/>
+        </g>
+        <g fill="var(--line)" stroke="var(--muted)" stroke-width="3">
+          <path d="M28 20h84l-8 50H36z"/><path d="M168 20h84l-8 50h-68z"/><path d="M308 20h84l-8 50h-68z"/>
+        </g>
+        <g font-family="Fraunces, Georgia, serif" font-size="28" font-weight="900" fill="var(--plum)" text-anchor="middle">
+          <text x="70" y="55">?</text><text x="210" y="55">?</text><text x="350" y="55">?</text>
+        </g>
+      </svg>
+      <figcaption>Tři pulty, nula not.</figcaption>
+    </figure>
+
+    <div class="line"><b>Houslistka</b><span>Ježiš, já si zapomněla doma noty!</span></div>
+    <div class="line"><b>Kontrabasista</b><span><i>(prohrabává desky)</i> Já taky.</span></div>
+    <div class="line"><b>Klavíristka</b><span>No… a&nbsp;já vlastně taky.</span></div>
+    <div class="line"><b>Houslistka</b><span>A&nbsp;co vlastně dneska hrajeme?</span></div>
+    <div class="line"><b>Kontrabasista</b><span>Nějakej jazz.</span></div>
+    <div class="line"><b>Klavíristka</b><span><i>(s&nbsp;úlevou)</i> Tak to noty ani nepotřebujeme. To nějak odimprovizujeme!</span></div>
+
+    <p class="dir">Kontrabasista sebevědomě rozjede kráčející bas. Hraje sám čtyři takty, motiv dvakrát.</p>
+
+    <div class="notes walk" aria-label="Kráčející bas: C E G A B A G E">
+      <span style="--i:0;margin-bottom:0">C</span><span style="--i:1;margin-bottom:1rem">E</span><span style="--i:2;margin-bottom:2rem">G</span><span style="--i:3;margin-bottom:2.6rem">A</span><span style="--i:4;margin-bottom:3.2rem">B</span><span style="--i:5;margin-bottom:2.6rem">A</span><span style="--i:6;margin-bottom:2rem">G</span><span style="--i:7;margin-bottom:1rem">E</span>
+    </div>
+    <p class="notes-label">Kontrabas: C E G A B A G E, dvakrát</p>
+
+    <p class="dir">Klavíristka se přidá rozloženými akordy. Další čtyři takty hrají spolu, motiv opět dvakrát. Začíná to znít jako opravdový jazz.</p>
+
+    <div class="notes arp" aria-label="Rozložený akord: C E G, opakovaně">
+      <span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span><span style="margin-bottom:0">C</span><span style="margin-bottom:1rem">E</span><span style="margin-bottom:2rem">G</span>
+    </div>
+    <p class="notes-label">Klavír: C E G, C E G, C E G, C E G, dvakrát</p>
+
+    <p class="dir">Teprve teď se chce přidat houslistka. Nadechne se, zvedne smyčec k&nbsp;velkolepému sólu a&nbsp;hned na prvním tónu: pink! Zní to přesně jako prasklá struna. Hudba se zastaví. Houslistka ucukne a&nbsp;nevěřícně zírá na nástroj.</p>
+
+    <figure>
+      <svg viewBox="0 0 420 200" role="img" aria-label="Housle s prasklou stočenou strunou">
+        <g transform="translate(210 100) rotate(-20)">
+          <path d="M-120 0c0-34 26-40 50-32 12 4 20 4 32 0 24-8 50-2 50 32S-14 40-38 32c-12-4-20-4-32 0-24 8-50 2-50-32z" fill="#b5682a" transform="translate(30 0)"/>
+          <path d="M-58 -10q6 10 0 20M-28 -10q-6 10 0 20" stroke="#3a2010" stroke-width="2.5" fill="none" transform="translate(30 0)"/>
+          <rect x="62" y="-5" width="80" height="10" rx="3" fill="#3a2010"/>
+          <circle cx="152" cy="0" r="10" fill="#3a2010"/>
+          <path d="M-80 -3H150M-80 3H150" stroke="#e9e2cf" stroke-width="1.5"/>
+          <path d="M-80 0H20q20 0 30-20t30-10 10 30-20 20" stroke="var(--gold)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <g fill="var(--plum)" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="34">
+          <text x="290" y="48">pink!</text>
+        </g>
+      </svg>
+      <figcaption>Dvě možnosti: ostře brnknout levou rukou (pizzicato), nebo držet u&nbsp;krku houslí starou prasklou strunu, zahrát jediný tón a&nbsp;strunu v&nbsp;tu chvíli pustit.</figcaption>
+    </figure>
+
+    <div class="line"><b>Houslistka</b><span><i>(zděšeně)</i> Praskla mi struna! Nemá někdo náhradní?</span></div>
+    <div class="line"><b>Kontrabasista</b><span>Klidně ti jednu půjčím. Stejně na všech nehraju.</span></div>
+    <div class="line"><b>Klavíristka</b><span>Já jich mám v&nbsp;klavíru taky ještě spoustu.</span></div>
+    <div class="line"><b>Houslistka</b><span><i>(podívá se na hodinky)</i> To jste hodní, ale já už asi budu muset jít domů. Vaří se mi tam ovoce.</span></div>
+    <div class="line"><b>Kontrabasista</b><span>Jaký ovoce?</span></div>
+    <div class="line"><b>Houslistka</b><span>Máme ho letos strašně moc.</span></div>
+    <div class="line"><b>Klavíristka</b><span>A&nbsp;co z&nbsp;něj budeš dělat?</span></div>
+    <div class="line"><b>Houslistka</b><span><i>(zvedne ze země prázdnou sklenici)</i> Džem.</span></div>
+    <div class="line"><b>Kontrabasista</b><span><i>(rozzáří se)</i> Tak fajn! Půjdeme k&nbsp;tobě domů zadžemovat!</span></div>
+
+    <p class="dir">Houslistka zvedne sklenici nad hlavu, všichni tři se ukloní a&nbsp;spokojeně odcházejí z&nbsp;pódia.</p>
+  </section>
+
+  <section class="finale">
+    <svg viewBox="0 0 200 220" width="160" style="margin:0 auto" role="img" aria-label="Zavařovací sklenice s víčkem">
+      <rect x="55" y="20" width="90" height="26" rx="6" fill="var(--plum)"/>
+      <path d="M50 46h100l-2 18c12 8 16 20 16 34v84c0 14-10 24-24 24H60c-14 0-24-10-24-24V98c0-14 4-26 16-34z" fill="#c4234f" opacity=".9"/>
+      <path d="M50 46h100l-2 18c12 8 16 20 16 34v84c0 14-10 24-24 24H60c-14 0-24-10-24-24V98c0-14 4-26 16-34z" fill="none" stroke="var(--muted)" stroke-width="3"/>
+      <rect x="52" y="110" width="96" height="50" rx="6" fill="#f4ead2"/>
+      <text x="100" y="143" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="22" fill="#1a2236">JAM</text>
+      <path d="M60 80q6-10 12 0" stroke="#fff" stroke-width="4" fill="none" opacity=".6" stroke-linecap="round"/>
+    </svg>
+    <p>Jam session<br>u&nbsp;houslistky doma</p>
+    <small>Minuty splněny, jazz zahrán, nikdo nemusel improvizovat.</small>
+  </section>
+</main>
+
+<footer>Scénka podle snu, který se zdál <a href="https://www.ondrejkratochvil.eu/">Ondřeji Kratochvílovi</a> 2.&nbsp;11.&nbsp;2026.<br>Volně k&nbsp;použití na školních akcích.</footer>
+</body>
+</html>
